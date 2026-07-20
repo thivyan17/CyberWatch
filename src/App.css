@@ -72,3 +72,42 @@ body{
   font-size:34px;
   font-weight:bold;
 }
+
+.page-label {
+  margin-bottom: 5px;
+  color: #39d98a;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a7b5c5;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  background: #39d98a;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #39d98a;
+}
+
+.sidebar li.active {
+  color: #39d98a;
+}
+
+.card span {
+  color: #8291a3;
+  font-size: 12px;
+}
