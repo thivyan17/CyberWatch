@@ -246,3 +246,73 @@ tbody tr:hover {
     width: 100%;
   }
 }
+
+.threat-section {
+  margin: 0 30px 20px;
+  padding: 24px;
+  color: white;
+  background: #111c2d;
+  border: 1px solid #22334a;
+  border-radius: 14px;
+}
+
+.threat-count {
+  padding: 7px 12px;
+  color: #ff8b98;
+  background: rgba(255, 107, 122, 0.12);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.threat-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.threat-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  background: #17263a;
+  border-left: 4px solid #ff6b7a;
+  border-radius: 10px;
+}
+
+.threat-alert h3 {
+  margin: 10px 0 7px;
+}
+
+.threat-alert p {
+  margin: 0;
+  color: #9cacbd;
+  font-size: 14px;
+}
+
+.threat-alert button {
+  padding: 10px 15px;
+  color: #07111f;
+  background: #39d98a;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.threat-alert button:hover {
+  filter: brightness(1.1);
+}
+
+.empty-threats {
+  color: #8091a5;
+}
+
+@media (max-width: 700px) {
+  .threat-alert {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
