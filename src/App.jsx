@@ -40,7 +40,7 @@ function App() {
 
         <Route
           path="/incidents"
-          element={<Incidents />}
+          element={<Incidents logs={logs} />}
         />
 
         <Route
