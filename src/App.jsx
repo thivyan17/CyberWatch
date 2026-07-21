@@ -28,16 +28,18 @@ function App() {
           <Route
             path="/"
             element={
-              <Dashboard
-                logs={logs}
-                onLogsUploaded={handleLogsUploaded}
-              />
+              <Dashboard logs={logs} />
             }
           />
 
           <Route
             path="/security-logs"
-            element={<SecurityLogs />}
+            element={
+              <SecurityLogs
+                logs={logs}
+                onLogsUploaded={handleLogsUploaded}
+              />
+            }
           />
 
           <Route

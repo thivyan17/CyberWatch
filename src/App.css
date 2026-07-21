@@ -602,3 +602,25 @@ tbody tr:hover {
   min-height: 100vh;
   margin-left: 220px;
 }
+
+.page-content {
+  padding-bottom: 30px;
+}
+
+.page-header {
+  margin: 32px 30px 20px;
+  padding: 24px;
+  color: white;
+  background: #111c2d;
+  border: 1px solid #22334a;
+  border-radius: 14px;
+}
+
+.page-header h1 {
+  margin: 4px 0 8px;
+}
+
+.page-header p:last-child {
+  margin: 0;
+  color: #8fa0b2;
+}
