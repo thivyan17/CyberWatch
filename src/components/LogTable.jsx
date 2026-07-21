@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { securityLogs } from "../data/securityLogs";
 
-function LogTable() {
+function LogTable({ logs }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [severityFilter, setSeverityFilter] = useState("All");
 
-  const filteredLogs = securityLogs.filter((log) => {
+  const filteredLogs = logs.filter((log) => {
     const searchValue = searchTerm.toLowerCase();
 
     const matchesSearch =

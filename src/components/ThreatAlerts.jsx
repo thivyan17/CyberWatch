@@ -1,8 +1,7 @@
-import { securityLogs } from "../data/securityLogs";
 import { detectThreats } from "../utils/detectThreats";
 
 function ThreatAlerts() {
-  const threats = detectThreats(securityLogs);
+  const threats = detectThreats(logs);
 
   return (
     <section className="threat-section">
