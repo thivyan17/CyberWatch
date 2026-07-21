@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import SummaryCards from "./components/SummaryCards";
-import ThreatChart from "./components/ThreatChart";
-import ThreatAlerts from "./components/ThreatAlerts";
-import LogUploader from "./components/LogUploader";
-import LogTable from "./components/LogTable";
+import Dashboard from "./pages/Dashboard";
+import SecurityLogs from "./pages/SecurityLogs";
+import Incidents from "./pages/Incidents";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 import { securityLogs } from "./data/securityLogs";
 import "./App.css";
 
@@ -22,11 +23,38 @@ function App() {
 
       <main className="content">
         <Navbar />
-        <SummaryCards logs={logs} />
-        <LogUploader onLogsUploaded={handleLogsUploaded} />
-        <ThreatChart logs={logs} />
-        <ThreatAlerts logs={logs} />
-        <LogTable logs={logs} />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                logs={logs}
+                onLogsUploaded={handleLogsUploaded}
+              />
+            }
+          />
+
+          <Route
+            path="/security-logs"
+            element={<SecurityLogs />}
+          />
+
+          <Route
+            path="/incidents"
+            element={<Incidents />}
+          />
+
+          <Route
+            path="/reports"
+            element={<Reports />}
+          />
+
+          <Route
+            path="/settings"
+            element={<Settings />}
+          />
+        </Routes>
       </main>
     </div>
   );
