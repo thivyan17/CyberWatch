@@ -624,3 +624,20 @@ tbody tr:hover {
   margin: 0;
   color: #8fa0b2;
 }
+
+/* ---------- Application Layout ---------- */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0b1220;
+}
+
+.main-area {
+  flex: 1;
+  margin-left: 220px;
+}
+
+.page-container {
+  padding: 24px;
+}
