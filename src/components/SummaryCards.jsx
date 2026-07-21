@@ -1,34 +1,59 @@
-const cards = [
-  {
-    title: "Critical Alerts",
-    value: 12,
-    description: "Immediate attention required",
-  },
-  {
-    title: "Blocked IPs",
-    value: 38,
-    description: "Automatically prevented",
-  },
-  {
-    title: "Failed Logins",
-    value: 107,
-    description: "Possible authentication attacks",
-  },
-  {
-    title: "Threat Score",
-    value: "82%",
-    description: "Overall environment risk",
-  },
-];
+function SummaryCards({ logs }) {
+  const criticalAlerts = logs.filter(
+    (log) => log.severity === "Critical"
+  ).length;
 
-function SummaryCards() {
+  const blockedIPs = new Set(
+    logs
+      .filter((log) => log.status === "Blocked")
+      .map((log) => log.ipAddress)
+  ).size;
+
+  const failedLogins = logs.filter(
+    (log) => log.event === "Failed Login"
+  ).length;
+
+  const riskyEvents = logs.filter(
+    (log) =>
+      log.severity === "High" ||
+      log.severity === "Critical"
+  ).length;
+
+  const threatScore =
+    logs.length > 0
+      ? Math.round((riskyEvents / logs.length) * 100)
+      : 0;
+
+  const cards = [
+    {
+      title: "Critical Alerts",
+      value: criticalAlerts,
+      description: "Immediate attention required",
+    },
+    {
+      title: "Blocked IPs",
+      value: blockedIPs,
+      description: "Unique blocked addresses",
+    },
+    {
+      title: "Failed Logins",
+      value: failedLogins,
+      description: "Possible authentication attacks",
+    },
+    {
+      title: "Threat Score",
+      value: `${threatScore}%`,
+      description: "Overall environment risk",
+    },
+  ];
+
   return (
-    <section className="dashboard">
+    <section className="summary-cards">
       {cards.map((card) => (
-        <article className="card" key={card.title}>
+        <article className="summary-card" key={card.title}>
           <h3>{card.title}</h3>
-          <p>{card.value}</p>
-          <span>{card.description}</span>
+          <strong>{card.value}</strong>
+          <p>{card.description}</p>
         </article>
       ))}
     </section>

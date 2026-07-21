@@ -22,7 +22,7 @@ function App() {
 
       <main className="content">
         <Navbar />
-        <SummaryCards />
+        <SummaryCards logs={logs} />
         <LogUploader onLogsUploaded={handleLogsUploaded} />
         <ThreatChart />
         <ThreatAlerts logs={logs} />
