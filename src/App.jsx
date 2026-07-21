@@ -24,7 +24,7 @@ function App() {
         <Navbar />
         <SummaryCards logs={logs} />
         <LogUploader onLogsUploaded={handleLogsUploaded} />
-        <ThreatChart />
+        <ThreatChart logs={logs} />
         <ThreatAlerts logs={logs} />
         <LogTable logs={logs} />
       </main>
