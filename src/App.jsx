@@ -1,6 +1,7 @@
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import SummaryCards from "./components/SummaryCards";
+import LogTable from "./components/LogTable";
 import "./App.css";
 
 function App() {
