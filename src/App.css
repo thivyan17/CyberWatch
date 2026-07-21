@@ -316,3 +316,25 @@ tbody tr:hover {
     flex-direction: column;
   }
 }
+
+.chart-section {
+  margin: 0 30px 20px;
+  padding: 24px;
+  color: white;
+  background: #111c2d;
+  border: 1px solid #22334a;
+  border-radius: 14px;
+}
+
+.chart-period {
+  padding: 7px 12px;
+  color: #9cacbd;
+  background: #17263a;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.chart-container {
+  height: 320px;
+  margin-top: 22px;
+}
