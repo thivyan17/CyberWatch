@@ -1,6 +1,6 @@
 import { detectThreats } from "../utils/detectThreats";
 
-function ThreatAlerts() {
+function ThreatAlerts({ logs }) {
   const threats = detectThreats(logs);
 
   return (
@@ -21,7 +21,9 @@ function ThreatAlerts() {
           threats.map((threat) => (
             <article className="threat-alert" key={threat.id}>
               <div>
-                <span className={`severity ${threat.severity.toLowerCase()}`}>
+                <span
+                  className={`severity ${threat.severity.toLowerCase()}`}
+                >
                   {threat.severity}
                 </span>
 
