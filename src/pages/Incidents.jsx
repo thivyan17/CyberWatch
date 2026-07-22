@@ -7,7 +7,7 @@ function Incidents({ logs }) {
 
   return (
     <div className="incidents-page">
-      <div className="incident-summary">
+      <section className="incident-summary">
         <div>
           <p className="page-label">Incident management</p>
           <h2>Active Incidents</h2>
@@ -20,9 +20,9 @@ function Incidents({ logs }) {
           <strong>{incidents.length}</strong>
           <span>Open incidents</span>
         </div>
-      </div>
+      </section>
 
-      <div className="incident-grid">
+      <section className="incident-grid">
         {incidents.length > 0 ? (
           incidents.map((incident) => (
             <article className="incident-card" key={incident.id}>
@@ -76,7 +76,7 @@ function Incidents({ logs }) {
             <p>No security threats currently require investigation.</p>
           </div>
         )}
-      </div>
+      </section>
 
       {selectedIncident && (
         <div
